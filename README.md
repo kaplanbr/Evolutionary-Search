@@ -3,6 +3,7 @@ Scikit-learn friendly evolutionary feature subset search algorithm
 
 As such:
 
+"""
 100 generations of evolution has started
 ___________Generation 0 ____________
 100 random livings are born
@@ -22,3 +23,4 @@ ___________Generation 2 ____________
 20 bestfit crossovers are born
 10 mutated bestfits are born
 10 mutated bestfit crossovers are born
+"""
