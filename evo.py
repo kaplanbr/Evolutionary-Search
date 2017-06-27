@@ -116,7 +116,7 @@ def main():
     
     df = pd.read_csv("data.csv")
     y = df["y"]
-    X = df[set(df.columns)-set(["y"])]
+    X = df[list(set(df.columns)-set(["y"]))]
     
     m_lr = LinearRegression()
     evo = EvolutionaryFeatureSubsetting(genelength=1150, populationsize=100)
