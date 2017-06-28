@@ -17,7 +17,7 @@ ___________Generation 1 ____________
 
 40 random livings are born
 
-20 survived from previous geneneration
+20 survived from previous generation
 
 20 bestfit crossovers are born
 
