@@ -1,5 +1,5 @@
 # Evolutionary-Search
-Scikit-learn friendly evolutionary feature subset search algorithm
+Evolutionary feature subset search algorithm with scikit-learn friendly interface
 
 As such:
 
