@@ -9,8 +9,7 @@ import pandas as pd
                                      
 class EvolutionaryFeatureSubsetting(object):
 
-    def __init__(self,genelength,populationsize,composition=[.2,.2,.1,.1,.4]):
-        self.genelength = genelength 
+    def __init__(self,populationsize,composition=[.2,.2,.1,.1,.4]):
         self.populationsize = populationsize 
         self.population = {}
         self.nbestfits = int(populationsize*composition[0])
@@ -45,7 +44,7 @@ class EvolutionaryFeatureSubsetting(object):
         self.initiateLife(n=self.nnewborns)
         for bf in self.bestfits:
             self.population[self.generation][bf] = self.population[self.generation-1][bf]    
-        print "%i survived from previous geneneration" %self.nbestfits           
+        print "%i survived from previous generation" %self.nbestfits           
         self.bestcrosses = self.crossover(self.bestfits,returnids=True)
         print "%i bestfit crossovers are born" %self.nbestcross           
         self.mutate(self.bestfits,0.05,bestfitmutants=True)
@@ -63,6 +62,7 @@ class EvolutionaryFeatureSubsetting(object):
         return score
       
     def fit(self,X,y,estimator,ngenerations,search_estimator=False):
+        self.genelength = len(X.columns)
         print "%i generations of evolution has started" %ngenerations
         self.initiateLife()
         n = ngenerations
@@ -119,7 +119,7 @@ def main():
     X = df[list(set(df.columns)-set(["y"]))]
     
     m_lr = LinearRegression()
-    evo = EvolutionaryFeatureSubsetting(genelength=1150, populationsize=100)
+    evo = EvolutionaryFeatureSubsetting(populationsize=100)
     evo.fit(X,y,estimator=m_lr,ngenerations=100)
     
     
