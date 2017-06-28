@@ -122,6 +122,9 @@ def main():
     evo = EvolutionaryFeatureSubsetting(populationsize=100)
     evo.fit(X,y,estimator=m_lr,ngenerations=100)
     
+    grandlogbook = evo.population
+    bestperformers = evo.bestfitofgen
+    
     
 if __name__ == "__main__":
     main()    
